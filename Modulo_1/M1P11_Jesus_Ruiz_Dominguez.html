@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Práctica 11</title>
+</head>
+<body>
+    <form action="https://httpbin.org/post" method="post" name="formulario_practica_11">
+        Nombre: <input type="text" name="name" placeholder="Nombre" required><br>
+        <br>
+        Género: <select name="genero">
+                    <option value="masculino">Masculino</option>
+                    <option value="femenino">Femenino</option>
+                </select><br>
+        <br>
+        Fecha de nacimiento: <input type="date" name="fecha_nacimiento"><br>
+        <br>
+        Email: <input type="email" name="email" placeholder="ejemplo@email.com" required><br>
+        <br>
+        Contraseña: <input type="password" name="contrasena" placeholder="password" required><br>
+        <br>
+        Número de asigntaras matriculadas: <input type="number" name="asignaturas_matriculadas" min="1" max="15"><br>
+        <br>
+        Curso matriculado: <select name="curso_matriculado">
+                                <option value="primero">Primero</option>
+                                <option value="segundo">Segundo</option>
+                                <option value="tercero">Tercero</option>
+                                <option value="cuarto">Cuarto</option>
+                           </select><br>
+        <br>
+        Aceptar terminos y condiciones <input type="checkbox" name="tyc" required><br>
+        Aceptar registro <input type="checkbox" name="aceptar_registro" required><br>
+        <br>
+        <button type="submit">Enviar</button>
+    </form>
+</body>
+</html>
