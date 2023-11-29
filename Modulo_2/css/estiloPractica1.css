@@ -1,0 +1,26 @@
+#imagen-cabecera{
+    height: 60px;
+}
+
+#texto-cabecera{
+    font-size: 16pt;
+    color: #333FFF;
+    font-weight: bold;
+}
+
+#menu{
+    width: 100%;
+    display: flex;
+    justify-content: space-around;
+
+    background-color: black;
+    color: white;
+}
+
+footer{
+    display: flex;
+    justify-content: space-around;
+    
+    background-color: black;
+    color: white;
+}
