@@ -1,0 +1,38 @@
+header{
+    color: blue;
+    font-family: 'Courier New', Courier, monospace;
+    text-align: center;
+    text-decoration: underline;
+}
+
+.seccion-principal{
+    margin-left: 8%;
+    margin-right: 5%;
+    margin-top: 30pt;
+}
+
+#primer-articulo{
+    color: grey;
+    font-size: 16pt;
+    font-weight: bold;
+    font-style: italic;
+}
+
+#segundo-articulo{
+    color: cadetblue;
+    font-size: 12pt;
+    text-align: justify;
+}
+
+.menu{
+    border: 2px solid black;
+}
+ul{
+    display: flex;
+    justify-content: center;
+    gap: 20pt;
+}
+
+a:hover{
+    color: orange;
+}
