@@ -11,7 +11,8 @@
 #menu{
     width: 100%;
     display: flex;
-    justify-content: space-around;
+    gap: 16pt;
+    padding-left: 16pt;
 
     background-color: black;
     color: white;
