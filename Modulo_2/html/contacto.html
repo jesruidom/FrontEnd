@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mi web completa II - Contacto</title>
+
+    <link rel="stylesheet" href="/Modulo_2/css/contacto.css">
+</head>
+
+<body>
+    <header>
+        <nav class="menu">
+            <div class="elementos-menu"><a href="/Modulo_2/html/index.html" class="boton">Inicio</a></div>          
+            <div class="elementos-menu"><a href="/Modulo_2/html/quienes-somos.html" class="boton">Quiénes somos</a></div>
+            <div class="elementos-menu"><a href="/Modulo_2/html/nuestros-servicios.html" class="boton">Nuestros servicios</a></div>
+            <div class="elementos-menu"><a href="/Modulo_2/html/contacto.html" class="boton">Contacto</a></div>
+        </nav>
+    </header>
+
+    <div class="contenido">
+        <div class="contenido-principal">
+            <div class="contenido-formulario">
+                <h1>Contacto - Centro médico Palmar</h1>
+                <p>Puedes contactar con nosotros a través de los diferentes medios disponibles</p>
+                <ul>
+                    <li><a href="#logos">Redes sociales</a></li>
+                    <li><a href="mailto:palmar.medico@gmail.com">Email</a></li>
+                    <li><a href="tel:+34684400245">Teléfono atención al cliente</a> disponible 24 horas</li>
+                </ul>
+                <p>Si lo prefieres rellena nuestro formulario de contacto y nosotros nos pondremos en contacto!</p>
+
+                <form action="https://httpbin.org/post" method="post" name="formulario-contacto" class="formulario">
+                    <fieldset class="contenido-formulario">
+                        <legend>Pide información detallada:</legend>                    
+                        Nombre: <input type="text" name="nombre" placeholder="Nombre" required> 
+                        Apellidos: <input type="text" name="apellidos" placeholder="Apellidos" required>
+                        Número de teléfono: <input type="tel" placeholder="254756385" pattern="[1-9]{9}" required>  
+                        Email: <input type="email" name="email" placeholder="ejemplo@email.com">  
+                        Texto: <input type="text" name="nombre" placeholder="Texto" required class="texto-formulario">
+
+                        <button type="submit">Enviar</button>
+                    </fieldset>
+                </form>
+            </div>
+            <div class="foto-contacto">
+                <img src="/Modulo_2/media/img/contact.png" alt="foto contacto" class="foto-contacto">
+            </div>
+            
+        </div>
+        
+
+        <aside class="publicidad">
+            <iframe src="https://forocoches.com/foro/showthread.php?t=7883714"></iframe>
+        </aside>
+        
+    </div>
+
+    <footer>
+        <address>
+            <ul>
+                <li>Dirección: <a href="https://www.google.es/maps/place/Bas%C3%ADlica+de+los+Carmelitas+de+la+Santa+Faz,+Av.+de+Jerez,+51,+41719+El+Palmar+de+Troya,+Sevilla/@37.0556258,-5.8113848,17z/data=!3m1!4b1!4m6!3m5!1s0xd0d83f12de7f8ad:0xb189c386d71f6149!8m2!3d37.0556215!4d-5.8088099!16s%2Fg%2F11c191d13h?entry=ttu">Av. de Jerez, 51, BAJO, 41719 El Palmar de Troya, Sevilla</a></li>
+                <li>Teléfono: <a href="tel:+34684400245">+34 684 400 245</a></li>
+                <li>Contáctanos: <a href="mailto:palmar.medico@gmail.com">palmar.medico@gmail.com</a></li>
+            </ul>            
+        </address>
+
+        <div id="contenedor-logos">
+            <a href="https://www.instagram.com/" class="contenedor_logos"><img src="/Modulo_2/media/img/Instagram_icon.png" alt="Logo Instagram" class="logo_redes"></a>
+            <a href="https://twitter.com/" class="contenedor_logos"><img src="/Modulo_2/media/img/x_icon.png" alt="Logo X" class="logo_redes"></a>
+            <a href="https://www.facebook.com/" class="contenedor_logos"><img src="/Modulo_2/media/img/facebook_icon.png" alt="Logo Facebook" class="logo_redes"></a>
+        </div>
+    </footer>
+</body>
+</html>
