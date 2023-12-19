@@ -1,0 +1,88 @@
+:root{
+    --color-principal: #f2ffd7;
+    --color-menu: #237e18;
+    --color-botones: #bedfa7;
+    --color-footer: #8abf78;
+    --color-fondo-texto: #579f48;
+}
+
+.container-fluid{
+    background-color: var(--color-principal);
+}
+
+/**********************************SECCIÓN MENU**********************************/
+
+.menu{
+    background-color: var(--color-menu);
+    height: 8vh;
+    display: flex;
+    gap: 2%;
+    padding: 0 2%;
+    align-items: center;
+}
+
+.menu-item{
+    background-color: var(--color-botones); 
+    padding: 5px;
+    border: 2px solid black;
+    border-radius: 7px;
+    width: 120px;
+    text-align: center;
+ }
+
+.logo{
+    width: 50px;
+}
+
+.boton{
+    text-decoration: none;
+    color: black;
+}
+
+/**********************************SECCIÓN PRINCIPAL**********************************/
+
+.contenedor-foto-presupuesto{
+    text-align: center;
+}
+
+.foto-presupuesto{
+    width: 65%;
+}
+
+/**********************************SECCIÓN FOOTER**********************************/
+.contenedor-footer{
+    background-color: var(--color-footer);
+}
+
+footer{
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+}
+
+#contenedor-logos{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 5px;
+}
+
+.logo_redes{
+    width: 50px;
+}
+
+@media screen and (max-width:992px) {
+
+    .logo{
+        width: 40px;
+    }
+
+    .menu-item{
+        width: 100px;
+    }
+
+    footer{
+        display: flex;
+        flex-direction: column;
+    }
+}
