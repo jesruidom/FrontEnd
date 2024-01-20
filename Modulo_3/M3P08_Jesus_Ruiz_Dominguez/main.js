@@ -3,7 +3,7 @@ const inicializar = () => {
 
     if(numeroEntero < 0 || numeroEntero > 10){
         alert("El número introducido no es correcto, introduzca un número entero entre 0 y 10")
-        numeroEntero = parseInt(prompt("Introduzca un número entero entre 0 y 10"));
+        location.reload()
     }
 
     let texto = `El numero que ha elegido el usuairo es el ${numeroEntero}`;
