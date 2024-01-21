@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Practica 4 - Notas</title>
+    <script src="/Modulo_3/M3P04_Jesus_Ruiz_Dominguez/main.js"></script>
+    <style>
+        .botones{
+            display: flex;
+            gap: 5px;
+        }
+    </style>
+</head>
+<body onload="inicializar()">
+    <div class="contenido">
+        <h1>Calcular la media de las notas</h1>
+        <p>Nota 1: <input type="number" id="nota1" placeholder="Insertar Nota"></p>
+        <p>Nota 2: <input type="number" id="nota2" placeholder="Insertar Nota"></p>       
+        <p>Nota 3: <input type="number" id="nota3" placeholder="Insertar Nota"></p>       
+        <p>Nota 4: <input type="number" id="nota4" placeholder="Insertar Nota"></p>     
+        <p>Nota 5: <input type="number" id="nota5" placeholder="Insertar Nota"></p>
+        <p>Nota 6: <input type="number" id="nota6" placeholder="Insertar Nota"></p>  
+
+        <div class="botones">
+            <button type="button" id="calculaMedia">Calcular la media</button>
+            <button type="button" id= "calculaCorrespondencia">Calcular la correspondencia de las notas</button>
+        </div>
+
+        <div class="resultado">
+            <p id="mediaNotas"></p>
+            <p id="correspondenciaNotas"></p>
+        </div>
+
+    </div>
+</body>
+</html>
