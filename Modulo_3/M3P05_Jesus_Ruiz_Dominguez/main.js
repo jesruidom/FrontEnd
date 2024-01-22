@@ -30,3 +30,6 @@ const inicializar = () => {
     const boton = document.getElementById("elegirMenu");
     boton.onclick = eleccionMenu;
 }
+
+// Llamar a la función inicializar al cargar la página
+document.addEventListener("DOMContentLoaded", inicializar);
