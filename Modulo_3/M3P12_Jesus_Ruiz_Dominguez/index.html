@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Practica 12- Validacion de formularios</title>
+    <link rel="stylesheet" href="/Modulo_3/M3P12_Jesus_Ruiz_Dominguez/style.css">
+
+    <script src="/Modulo_3/M3P12_Jesus_Ruiz_Dominguez/main.js"></script>
+</head>
+<body onload="inicializar()">
+    <h2>Práctica 12 - Validación de formularios</h2>
+    <form action="https://httpbin.org/post" method="post" name="nombreFormulario" onsubmit="return validador()">
+        <fieldset>
+            <legend>Datos del Usuario</legend>                    
+            Usuario: <input type="text" name="nombre" placeholder="Nombre" required> 
+            Correo Electrónico: <input type="email" name="correo" placeholder="ejemplo@email.com" required>
+            Contraseña: <input type="password" name="contrasena" required>  
+            Repita contraseña: <input type="password" name="repiteContrasena" required>  
+
+            <button type="submit" name="btnEnviar">Enviar</button>
+        </fieldset>
+    </form>
+</body>
+</html>
