@@ -1,0 +1,13 @@
+let cookiesOriginales = document.cookie.split(";")
+cookiesOriginales 
+
+const fechaEnMilisegundos = new Date().getTime()
+const yearActual = new Date().getFullYear()
+const expirationDate = new Date(yearActual, 11, 31)
+document.cookie = `M4_UD01_P01=${fechaEnMilisegundos}; expires=${expirationDate.toUTCString()}`
+
+document.cookie.split(";").reduce((cookies, cookie) => {const [name, value] = cookie.split('=').map(c => c.trim()); return {...cookies, [name]:value};}, {});
+
+document.cookie = "M4_UD01_P01=; Max-Age=-1";
+document.cookie.split(";").reduce((cookies, cookie) => {const [name, value] = cookie.split('=').map(c => c.trim()); return {...cookies, [name]:value};}, {});
+

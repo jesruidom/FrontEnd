@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Practica 2</title>
+
+    <script>
+
+        const inicializar = () => {
+
+            const almacenaLocal = () => {
+                if(localStorage.getItem("M4_UD02_P02")){
+                    alert("Error! Ya existe un dato en el almacen con esa clave.")
+                    return;
+                }
+
+                localStorage["M4_UD02_P02"] = "Jesus Ruiz Dominguez"
+                //localStorage.setItem("M4_UD02_P02", "Jesus Ruiz Dominguez")
+                //localStorage.M4_UD02_P02 = "Jesus Ruiz Dominguez"            
+            }
+
+            const almacenaSesion = () => {
+                sessionStorage.setItem("Date", new Date().getTime())
+            }
+
+            const muestraDatos = () => {
+                const datoLocal = localStorage.getItem("M4_UD02_P02")
+                const datoSesion = sessionStorage.getItem("Date")
+                let parrafoLocal = document.getElementById("datosLocal")
+                let parrafoSesion = document.getElementById("datosSesion")
+                parrafoLocal.innerHTML = `Los datos almacenados en LocalStorage son:  M4_UD02_P02 - ${datoLocal}`
+                parrafoSesion.innerHTML = `Los datos almacenados en SessionStorage son: Date - ${datoSesion}`
+            }
+
+            const btnLocal = document.getElementById("local");
+            btnLocal.onclick = almacenaLocal;
+
+            const btnSesion = document.getElementById("sesion");
+            btnSesion.onclick = almacenaSesion
+
+            const btnDatos = document.getElementById("mostrarDatos");
+            btnDatos.onclick = muestraDatos
+        }
+
+    </script>
+</head>
+<body onload="inicializar()">
+    <h1>Práctica 2 - Almacenamiento Local</h1>
+
+    <button type="button" id="local">Dato en localStorage</button>
+    <button type="button" id="sesion">Dato en sessionStorage</button>
+    <button type="button" id="mostrarDatos">Mostrar datos almacenados</button>
+
+    <p id="datosLocal"></p>
+    <p id="datosSesion"></p>
+</html>
