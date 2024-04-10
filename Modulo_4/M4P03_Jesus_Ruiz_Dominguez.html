@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Practica 3 - Almacenamiento Remoto I</title>
+
+    <style>
+        table {
+            border-collapse: collapse;
+            width: 100%;
+        }
+        th, td {
+            border: 3px solid blue;
+            text-align: center;
+        }
+        th {
+            background-color: skyblue;
+        }
+    </style>
+
+    <script>
+        const inicializar = () => {
+            fetch('https://jsonplaceholder.typicode.com/photos')
+            .then((response) => response.json())
+            .then((json) => {
+                // Obtener los primeros 20 elementos
+                const primerosVeinteElementos = json.slice(0, 20);
+                //console.log(primerosVeinteElementos);
+
+                // Crear filas de tabla para cada elemento
+                const tablaBody = document.getElementById('tablaBody');
+                for(const elemento of primerosVeinteElementos) {
+                    // Crear una fila de tabla
+                    const fila = document.createElement('tr');
+
+                    // Crear celdas de datos para cada propiedad del elemento
+                    const celdaIdAlbum = document.createElement('td');
+                    celdaIdAlbum.textContent = elemento.albumId;
+
+                    const celdaTituloAlbum = document.createElement('td');
+                    celdaTituloAlbum.textContent = elemento.title;
+
+                    const celdaImagen = document.createElement('td');
+                    const imagen = document.createElement('img');
+                    imagen.src = elemento.thumbnailUrl; // Mostramos la imagen en miniatura
+                    celdaImagen.appendChild(imagen);
+
+                    const celdaIdRegistro = document.createElement('td');
+                    celdaIdRegistro.textContent = elemento.id;
+
+                    // Agregar celdas a la fila
+                    fila.appendChild(celdaIdAlbum);
+                    fila.appendChild(celdaTituloAlbum);
+                    fila.appendChild(celdaImagen);
+                    fila.appendChild(celdaIdRegistro);
+
+                    // Agregar fila a la tabla
+                    tablaBody.appendChild(fila);
+                };
+            });
+        }
+
+    </script>
+</head>
+<body onload="inicializar()">
+    <h1>Práctica 3 - Almacenamiento Remoto I</h1>
+
+    <table>
+        <thead>
+            <tr>
+                <th>ID de Álbum</th>
+                <th>Título de Álbum</th>
+                <th>Imagen Principal</th>
+                <th>ID del Registro</th>
+            </tr>
+        </thead>
+        <tbody id="tablaBody">
+            <!-- Aquí se insertarán las filas de la tabla -->
+        </tbody>
+    </table>
+</body>
+</html>
