@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Practica 4</title>
+    <style>
+        #map {
+            width: 500px;
+            height: 500px;
+        }
+    </style>
+
+    <script>
+        function inicializar() {
+            if (navigator.geolocation) {
+                navigator.geolocation.getCurrentPosition(mostrarMapa, mostrarError);
+            } else {
+                alert("Geolocalización no es soportada por este navegador.");
+            }
+        }
+
+        function mostrarMapa(posicion) {
+            var latitud = posicion.coords.latitude;
+            var longitud = posicion.coords.longitude;
+
+            var mapa = document.getElementById('map');
+            mapa.innerHTML = '<iframe width="500" height="500" frameborder="0" scrolling="no" marginheight="0" marginwidth="0" src="https://www.openstreetmap.org/export/embed.html?bbox=' + (longitud - 0.01) + '%2C' + (latitud - 0.01) + '%2C' + (longitud + 0.01) + '%2C' + (latitud + 0.01) + '&amp;layer=mapnik&amp;marker=' + latitud + '%2C' + longitud + '&amp;zoom=15"></iframe>';
+
+        }
+
+        function mostrarError(error) {
+            switch(error.code) {
+                case error.PERMISSION_DENIED:
+                    alert("Usuario denegó el permiso de geolocalización.");
+                    break;
+                case error.POSITION_UNAVAILABLE:
+                    alert("La información de ubicación no está disponible.");
+                    break;
+                case error.TIMEOUT:
+                    alert("La solicitud para obtener la ubicación del usuario ha caducado.");
+                    break;
+                case error.UNKNOWN_ERROR:
+                    alert("Ocurrió un error desconocido.");
+                    break;
+            }
+        }
+    </script>
+</head>
+<body onload="inicializar()">
+    <h1>Práctica 4</h1>
+    
+    <!-- Aquí se mostrará el mapa -->
+    <div id="map"></div>
+
+</body>
+</html>
