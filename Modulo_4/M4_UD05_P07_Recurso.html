@@ -11,33 +11,38 @@
 
     <script>
         // Definición de constantes
+        const RANGO = 100;
         const GRAPH_HEIGHT = 300;
         const GRAPH_WIDTH = 400;
         const MARGIN = 30;
         const DATA = [
             {
-                x: 1,
-                y: 3
+                x: 20,
+                y: 30
             },
             {
-                x: 4,
-                y: 9
+                x: 35,
+                y: 10
             },
             {
-                x: 8,
-                y: 5
+                x: 70,
+                y: 38
             },
+            {
+                x: 100,
+                y: 100
+            }
         ]
 
         // Funciones escalares -> Más info: https://d3-spanish.readthedocs.io/es/latest/basico/escalas.html
         const xScale = d3.scaleLinear()
             // Valores mínimos y máximos que se mostrarán en la gráfica
-            .domain([0, 10])
+            .domain([0, RANGO])
             // Proyección del valor del dominio en relación al ancho de la gráfica
             .range([0, GRAPH_WIDTH]);
 
         const yScale = d3.scaleLinear()
-            .domain([0, 10])
+            .domain([0, RANGO])
             .range([GRAPH_HEIGHT, 0]);
 
         // Añadimos la gráfica al elemento del dom
