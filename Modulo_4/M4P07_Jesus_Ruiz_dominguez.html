@@ -1,8 +1,9 @@
 <!DOCTYPE html>
-
+<html lang="es">
 <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="user-scalable=no, width=device-width, initial-scale=1, maximum-scale=1">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Practica 7</title>
 </head>
 
 <body>
@@ -11,11 +12,11 @@
 
     <script>
         // Definición de constantes
-        const RANGO = 100;
+        const RANGO = 100;      // CONSTANTE QUE ALMACENA EL VALOR DEL RANGO DE LA GRÁFICA QUE PIDE EL ENUNCIADO
         const GRAPH_HEIGHT = 300;
         const GRAPH_WIDTH = 400;
         const MARGIN = 30;
-        const DATA = [
+        const DATA = [          // AQUÍ SE HAN SUSTITUIDO LOS PUNTOS QUE HABÍAS POR LOS QUE PIDE EL ENUNCIADO
             {
                 x: 20,
                 y: 30
@@ -28,7 +29,7 @@
                 x: 70,
                 y: 38
             },
-            {
+            {                   // AQUÍ SE HA AÑADIDO EL CUARTO PUNTO QUE PIDE EL ENUNCIADO
                 x: 100,
                 y: 100
             }
@@ -37,12 +38,12 @@
         // Funciones escalares -> Más info: https://d3-spanish.readthedocs.io/es/latest/basico/escalas.html
         const xScale = d3.scaleLinear()
             // Valores mínimos y máximos que se mostrarán en la gráfica
-            .domain([0, RANGO])
+            .domain([0, RANGO])         // SE APLICA EL RANGO DE ANCHURA QUE PIDE EL ENUNCIADO
             // Proyección del valor del dominio en relación al ancho de la gráfica
             .range([0, GRAPH_WIDTH]);
 
         const yScale = d3.scaleLinear()
-            .domain([0, RANGO])
+            .domain([0, RANGO])         // SE APLICA EL RANGO DE ALTURA QUE PIDE EL ENUNCIADO
             .range([GRAPH_HEIGHT, 0]);
 
         // Añadimos la gráfica al elemento del dom
@@ -72,7 +73,11 @@
             // Se obtienen las coordenadas x e y en relación a los valores del objeto
             .attr("cx", ({ x }) => xScale(x))
             .attr("cy", ({ y }) => yScale(y))
-            .attr("r", 3)
+            .attr("r", 5)       // SE APLICA EL RADIO DE LOS CÍRCULOS QUE PIDE EL ENUNCIADO
+            .attr("cursor", "pointer") // Añadimos el atributo cursor con valor pointer
+            .on("click", ({ x, y }) => { // Agregamos un evento click para mostrar la alerta
+                alert(`Posición del punto: (${x}, ${y})`);
+            });
     </script>
 
 </body>
